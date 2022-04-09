@@ -1,6 +1,7 @@
 import * as React from "react";
 import {
   AppBar,
+  Badge,
   Box,
   IconButton,
   Menu,
@@ -9,6 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import TranslateIcon from "@mui/icons-material/Translate";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
@@ -46,6 +48,11 @@ export function Header() {
         <Box flexGrow={1} ml={5}>
           <HeaderBreadcrumbs />
         </Box>
+        <IconButton size="large" color="inherit">
+          <Badge badgeContent={4} color="secondary">
+            <ShoppingCartIcon />
+          </Badge>
+        </IconButton>
         <IconButton
           size="large"
           aria-label="change-language"
