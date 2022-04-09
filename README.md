@@ -1,4 +1,4 @@
-# Mobile Store
+# Products
 
 ## Available Scripts
 

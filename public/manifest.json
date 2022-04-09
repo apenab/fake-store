@@ -1,6 +1,6 @@
 {
-  "short_name": "Mobile store",
-  "name": "Mobile store App Sample",
+  "short_name": "Products",
+  "name": "Products App Sample",
   "icons": [
     {
       "src": "favicon.ico",
