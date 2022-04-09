@@ -1,6 +1,7 @@
 import * as React from "react";
 import {
   AppBar,
+  Box,
   IconButton,
   Menu,
   MenuItem,
@@ -9,6 +10,9 @@ import {
 } from "@mui/material";
 import TranslateIcon from "@mui/icons-material/Translate";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+
+import { HeaderBreadcrumbs } from "./header-breadcrumbs";
 
 export function Header() {
   const { t, i18n } = useTranslation();
@@ -31,12 +35,20 @@ export function Header() {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <Typography
+          variant="h6"
+          component={Link}
+          to="/"
+          sx={{ color: "white", textDecoration: "inherit" }}
+        >
           {t("header.title").toUpperCase()}
         </Typography>
+        <Box flexGrow={1} ml={5}>
+          <HeaderBreadcrumbs />
+        </Box>
         <IconButton
           size="large"
-          aria-label="account of current user"
+          aria-label="change-language"
           aria-controls="menu-appbar"
           aria-haspopup="true"
           onClick={handleMenu}
