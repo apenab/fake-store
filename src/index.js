@@ -7,7 +7,7 @@ import { QueryClientProvider } from "react-query";
 
 import { theme } from "theme";
 import { queryClient } from "query";
-import App from "./App";
+import App from "./app";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
