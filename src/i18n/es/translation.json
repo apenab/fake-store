@@ -1,4 +1,9 @@
 {
   "error": "error",
-  "header": { "title": "productos" }
+  "header": { "title": "productos" },
+  "product_list": {
+    "error": "se ha producido un error al obtener la lista de productos",
+    "no_results": "no se encontraron resultados para la busqueda"
+  },
+  "product_card": { "price": "precio" }
 }

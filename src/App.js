@@ -1,16 +1,18 @@
 import { Routes, Route } from "react-router-dom";
 
-import { Header } from "components";
+import { AppContainer, Header } from "components";
 import { ProductDetails, ProductList } from "routes";
 
 function App() {
   return (
     <>
       <Header />
-      <Routes>
-        <Route path="/" element={<ProductList />} />
-        <Route path="/product/:productId" element={<ProductDetails />} />
-      </Routes>
+      <AppContainer>
+        <Routes>
+          <Route path="/" element={<ProductList />} />
+          <Route path="/product/:productId" element={<ProductDetails />} />
+        </Routes>
+      </AppContainer>
     </>
   );
 }
