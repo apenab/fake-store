@@ -1,6 +1,6 @@
 {
-  "short_name": "Products",
-  "name": "Products App Sample",
+  "short_name": "Fake Store",
+  "name": "Fake Store API usage example",
   "icons": [
     {
       "src": "favicon.ico",

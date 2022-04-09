@@ -1,4 +1,4 @@
-# Products
+# Fake Store
 
 ## Available Scripts
 
