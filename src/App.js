@@ -1,7 +1,14 @@
+import { Routes, Route } from "react-router-dom";
+
+import { ProductDetails, ProductList } from "routes";
+
 function App() {
   return (
     <div>
-      <h1>Mobile Store</h1>
+      <Routes>
+        <Route path="/" element={<ProductList />} />
+        <Route path="/product/:productId" element={<ProductDetails />} />
+      </Routes>
     </div>
   );
 }
