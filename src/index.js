@@ -10,6 +10,9 @@ import { queryClient } from "query";
 import App from "./app";
 import reportWebVitals from "./reportWebVitals";
 
+// import i18n (needs to be bundled ;))
+import "./i18n/config";
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>

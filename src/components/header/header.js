@@ -32,7 +32,7 @@ export function Header() {
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          {t("nav.title").toUpperCase()}
+          {t("header.title").toUpperCase()}
         </Typography>
         <IconButton
           size="large"

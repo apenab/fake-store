@@ -1,3 +1,4 @@
 {
-  "error": "error"
+  "error": "error",
+  "header": { "title": "products" }
 }
