@@ -1,16 +1,16 @@
 import {
-  Box,
   Card,
   CardActionArea,
   CardActions,
   CardContent,
   CardMedia,
   Chip,
-  Rating,
   Typography,
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+
+import { Rating } from "components";
 
 export function ProductItem({ id, title, price, image, category, rating }) {
   const { t } = useTranslation();
@@ -24,17 +24,7 @@ export function ProductItem({ id, title, price, image, category, rating }) {
             {title}
           </Typography>
           <Chip label={category} size="small" />
-          <Box
-            sx={{
-              width: 200,
-              display: "flex",
-              alignItems: "center",
-              mt: 2,
-            }}
-          >
-            <Rating name="rating" value={rating?.rate} readOnly />
-            <Box sx={{ ml: 2 }}>{rating?.count}</Box>
-          </Box>
+          <Rating rate={rating?.rate} count={rating?.count} />
         </CardContent>
         <CardActions>
           <Typography ml={1} variant="subtitle2" color="text.secondary">
