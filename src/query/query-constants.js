@@ -1,3 +1,6 @@
 export const QUERY_CONSTANTS = {
-  Products: "products",
+  GetAllProducts: "products",
+  GetSingleProduct: (productId) => `products/${productId}`,
+  GetAllCarts: "carts",
+  GetUserCart: (userId) => `carts/user/${userId}`,
 };

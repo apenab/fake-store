@@ -11,7 +11,7 @@ export function Rating({ rate, count }) {
       }}
     >
       <MUIRating name="rating" value={rate} readOnly />
-      <Box sx={{ ml: 2 }}>{count}</Box>
+      <Box sx={{ ml: 1 }}>{count}</Box>
     </Box>
   );
 }

@@ -4,6 +4,7 @@ import {
   Badge,
   Box,
   IconButton,
+  LinearProgress,
   Menu,
   MenuItem,
   Toolbar,
@@ -13,13 +14,20 @@ import TranslateIcon from "@mui/icons-material/Translate";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { useIsFetching, useQuery } from "react-query";
 
+import { FAKE_USER_ID } from "constants";
+import { QUERY_CONSTANTS } from "query";
 import { HeaderBreadcrumbs } from "./header-breadcrumbs";
 
 export function Header() {
   const { t, i18n } = useTranslation();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const { data } = useQuery(QUERY_CONSTANTS.GetUserCart(FAKE_USER_ID));
+
+  const isFetching = useIsFetching();
 
   function handleMenu(event) {
     setAnchorEl(event.currentTarget);
@@ -48,9 +56,13 @@ export function Header() {
             {t("header.title").toUpperCase()}
           </Typography>
           <IconButton size="large" color="inherit">
-            <Badge badgeContent={4} color="secondary">
+            {data && data.length > 0 ? (
+              <Badge badgeContent={data.length} color="secondary">
+                <ShoppingCartIcon />
+              </Badge>
+            ) : (
               <ShoppingCartIcon />
-            </Badge>
+            )}
           </IconButton>
           <IconButton
             size="large"
@@ -100,6 +112,7 @@ export function Header() {
             <HeaderBreadcrumbs />
           </Box>
         </Toolbar>
+        {!!isFetching && <LinearProgress />}
       </AppBar>
     </>
   );

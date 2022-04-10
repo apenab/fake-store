@@ -5,5 +5,9 @@
     "error": "an error has occurred when obtaining the list of products",
     "no_results": "no results found for search"
   },
-  "product_card": { "price": "price" }
+  "product_card": { "price": "price" },
+  "product_details": {
+    "error": "an error occurred while getting the product details",
+    "add_to_cart": "add to cart"
+  }
 }

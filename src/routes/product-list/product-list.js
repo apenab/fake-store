@@ -11,10 +11,10 @@ import {
   Skeleton,
   Typography,
 } from "@mui/material";
-import { QUERY_CONSTANTS } from "query";
 import { useTranslation } from "react-i18next";
 import { useQuery } from "react-query";
 
+import { QUERY_CONSTANTS } from "query";
 import { ProductItem } from "./product-item";
 
 export function ProductList() {
@@ -23,7 +23,7 @@ export function ProductList() {
   const { t } = useTranslation();
 
   const { data, isSuccess, isLoading, isError } = useQuery(
-    QUERY_CONSTANTS.Products
+    QUERY_CONSTANTS.GetAllProducts
   );
 
   const products = isSuccess

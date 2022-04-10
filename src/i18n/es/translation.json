@@ -5,5 +5,9 @@
     "error": "se ha producido un error al obtener la lista de productos",
     "no_results": "no se encontraron resultados para la busqueda"
   },
-  "product_card": { "price": "precio" }
+  "product_card": { "price": "precio" },
+  "product_details": {
+    "error": "ha ocurrido un error a la hora de obtener los detalles del producto",
+    "add_to_cart": "añadir a la cesta"
+  }
 }
