@@ -10,8 +10,8 @@ export function HeaderBreadcrumbs() {
   const pathnames = location?.pathname.split("/").filter((x) => x);
 
   return (
-    <Breadcrumbs aria-label="breadcrumb" sx={{ color: "white" }}>
-      <Link underline="hover" color="inherit" to="/" style={{ color: "white" }}>
+    <Breadcrumbs aria-label="breadcrumb">
+      <Link underline="hover" color="inherit" to="/">
         Products
       </Link>
       {pathnames.map((value, index) => {
@@ -19,17 +19,11 @@ export function HeaderBreadcrumbs() {
         const to = `/${pathnames.slice(0, index + 1).join("/")}`;
 
         return last ? (
-          <Typography color="text.primary" key={to} sx={{ color: "white" }}>
+          <Typography color="text.primary" key={to}>
             {breadcrumbNameMap[to]}
           </Typography>
         ) : (
-          <Link
-            underline="hover"
-            style={{ color: "white" }}
-            color="inherit"
-            to={to}
-            key={to}
-          >
+          <Link underline="hover" to={to} key={to}>
             {breadcrumbNameMap[to]}
           </Link>
         );

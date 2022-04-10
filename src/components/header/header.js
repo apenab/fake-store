@@ -35,63 +35,72 @@ export function Header() {
   }
 
   return (
-    <AppBar position="static">
-      <Toolbar>
-        <Typography
-          variant="h6"
-          component={Link}
-          to="/"
-          sx={{ color: "white", textDecoration: "inherit" }}
-        >
-          {t("header.title").toUpperCase()}
-        </Typography>
-        <Box flexGrow={1} ml={5}>
-          <HeaderBreadcrumbs />
-        </Box>
-        <IconButton size="large" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <ShoppingCartIcon />
-          </Badge>
-        </IconButton>
-        <IconButton
-          size="large"
-          aria-label="change-language"
-          aria-controls="menu-appbar"
-          aria-haspopup="true"
-          onClick={handleMenu}
-          color="inherit"
-        >
-          <TranslateIcon />
-        </IconButton>
-        <Menu
-          id="menu-appbar"
-          anchorEl={anchorEl}
-          anchorOrigin={{
-            vertical: "top",
-            horizontal: "right",
-          }}
-          keepMounted
-          transformOrigin={{
-            vertical: "top",
-            horizontal: "right",
-          }}
-          open={Boolean(anchorEl)}
-          onClose={handleClose}
-        >
-          <MenuItem
-            selected={i18n.language === "en"}
-            onClick={() => handleChangeLanguage("en")}
+    <>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography
+            variant="h6"
+            component={Link}
+            to="/"
+            sx={{ color: "white", textDecoration: "inherit" }}
+            flexGrow={1}
           >
-            English
-          </MenuItem>
-          <MenuItem
-            selected={i18n.language === "es"}
-            onClick={() => handleChangeLanguage("es")}
+            {t("header.title").toUpperCase()}
+          </Typography>
+          <IconButton size="large" color="inherit">
+            <Badge badgeContent={4} color="secondary">
+              <ShoppingCartIcon />
+            </Badge>
+          </IconButton>
+          <IconButton
+            size="large"
+            aria-label="change-language"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={handleMenu}
+            color="inherit"
           >
-            Español
-          </MenuItem>
-        </Menu>
-      </Toolbar>
-    </AppBar>
+            <TranslateIcon />
+          </IconButton>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorEl}
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+          >
+            <MenuItem
+              selected={i18n.language === "en"}
+              onClick={() => handleChangeLanguage("en")}
+            >
+              English
+            </MenuItem>
+            <MenuItem
+              selected={i18n.language === "es"}
+              onClick={() => handleChangeLanguage("es")}
+            >
+              Español
+            </MenuItem>
+          </Menu>
+        </Toolbar>
+        <Toolbar
+          disableGutters
+          variant="dense"
+          sx={{ backgroundColor: "white" }}
+        >
+          <Box ml={3}>
+            <HeaderBreadcrumbs />
+          </Box>
+        </Toolbar>
+      </AppBar>
+    </>
   );
 }

@@ -1,6 +1,6 @@
 {
   "error": "error",
-  "header": { "title": "products" },
+  "header": { "title": "fake store" },
   "product_list": {
     "error": "an error has occurred when obtaining the list of products",
     "no_results": "no results found for search"
