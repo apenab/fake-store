@@ -7,7 +7,7 @@ import { QueryClientProvider } from "react-query";
 
 import { theme } from "theme";
 import { queryClient } from "query";
-import App from "./app";
+import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 // import i18n (needs to be bundled ;))
