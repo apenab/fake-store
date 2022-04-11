@@ -8,6 +8,7 @@
   "product_card": { "price": "price" },
   "product_details": {
     "error": "an error occurred while getting the product details",
-    "add_to_cart": "add to cart"
+    "add_to_cart": "add to cart",
+    "add_to_cart_successfully": "product added to cart successfully"
   }
 }

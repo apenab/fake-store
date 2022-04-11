@@ -3,7 +3,15 @@ import axios from "axios";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { Box, Button, IconButton, Stack, Typography } from "@mui/material";
+import {
+  Alert,
+  Box,
+  Button,
+  IconButton,
+  Snackbar,
+  Stack,
+  Typography,
+} from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useMutation, useQueryClient } from "react-query";
 
@@ -12,6 +20,7 @@ import { FAKE_USER_ID } from "constants";
 
 export function ProductDetailsActions({ id }) {
   const [quantity, setQuantity] = React.useState(1);
+  const [isSuccessAlertOpen, setSuccessAlertStatus] = React.useState(false);
 
   const { t } = useTranslation();
 
@@ -20,6 +29,7 @@ export function ProductDetailsActions({ id }) {
     (data) => axios.post(`${API_URL}/carts`, data).then((res) => res.data),
     {
       onSuccess: () => {
+        setSuccessAlertStatus(true);
         queryClient.refetchQueries(QUERY_CONSTANTS.GetUserCart(FAKE_USER_ID));
       },
     }
@@ -57,6 +67,15 @@ export function ProductDetailsActions({ id }) {
       >
         {t("product_details.add_to_cart")}
       </Button>
+      <Snackbar
+        open={isSuccessAlertOpen}
+        autoHideDuration={3000}
+        onClose={() => setSuccessAlertStatus(false)}
+      >
+        <Alert severity="success" sx={{ width: "100%" }}>
+          {t("product_details.add_to_cart_successfully")}
+        </Alert>
+      </Snackbar>
     </Box>
   );
 }

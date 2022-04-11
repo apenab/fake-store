@@ -8,6 +8,7 @@
   "product_card": { "price": "precio" },
   "product_details": {
     "error": "ha ocurrido un error a la hora de obtener los detalles del producto",
-    "add_to_cart": "añadir a la cesta"
+    "add_to_cart": "añadir a la cesta",
+    "add_to_cart_successfully": "producto añadido a la cesta correctamente"
   }
 }
