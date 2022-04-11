@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/dd5f297e-910c-459e-a83b-bcb0a54420b9/deploy-status)](https://app.netlify.com/sites/beautiful-bavarois-cb598c/deploys)
+
 # Fake Store
 
 This project is an example of using the [Fake Store API](https://fakestoreapi.com/)
